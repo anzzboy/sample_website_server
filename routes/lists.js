@@ -45,12 +45,12 @@ router.delete("/:id", async (req, res) => {
 
 router.delete("/", async (req, res) => {
   try {
-    let result = await collection.drop();
+    let result = await collection.remove();
 
     res.send(result).status(200);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Error deleting record");
+    res.status(500).send("Error deleting");
   }
 });
 
